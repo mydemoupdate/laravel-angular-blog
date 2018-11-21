@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "frond-end": {
+    "devupdate2018": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/frond-end",
+            "outputPath": "dist/devupdate2018",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -57,18 +57,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "frond-end:build"
+            "browserTarget": "devupdate2018:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "frond-end:build:production"
+              "browserTarget": "devupdate2018:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "frond-end:build"
+            "browserTarget": "devupdate2018:build"
           }
         },
         "test": {
@@ -102,7 +102,7 @@
         }
       }
     },
-    "frond-end-e2e": {
+    "devupdate2018-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -111,11 +111,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "frond-end:serve"
+            "devServerTarget": "devupdate2018:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "frond-end:serve:production"
+              "devServerTarget": "devupdate2018:serve:production"
             }
           }
         },
@@ -131,5 +131,5 @@
       }
     }
   },
-  "defaultProject": "frond-end"
+  "defaultProject": "devupdate2018"
 }
