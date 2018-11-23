@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Wellcome Laravel back-end with Angular
                 </div>
 
                 <div class="links">
