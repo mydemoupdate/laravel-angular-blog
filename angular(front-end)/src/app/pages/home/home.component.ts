@@ -7,10 +7,11 @@ import { UserService } from 'src/app/service/user.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  data = new Array();
   constructor(private userService: UserService) { }
   ngOnInit() {
     this.userService.getUser().subscribe((data: any)=>{
-      console.log(data);
+     this.data = data.items || [];
     })
   }
 

@@ -17,18 +17,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $userList = array();
-        for ($i=1; $i < 21; $i++) { 
-            $userList[] = array(
-                'username' => 'User - '.$i,
-                'mobile' => rand(111111111, 999999999)
-            );            
-        }
-        $finalResult = array(
-            'success' => true,
-            'data' => $userList
-        );
-        return $finalResult;
+      
     }
 
     /**
