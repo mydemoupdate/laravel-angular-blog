@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
-// import { Observable }     from 'rxjs/Observable';
 import { catchError, map, tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 const httpOptions = {
@@ -14,21 +13,11 @@ const httpOptions = {
   providedIn: 'root',
 })
 export class UserService { 
-    // private URL_API =environment.API;
-    // url = {
-    //     user: this.URL_API +'/user-all'
-    // }
+  private url = environment.apiUrl + '/api/user-all';
   constructor(private httpClientService: HttpClient) { }
-  // getUser (): Observable<any> {
-  //   return this.httpClientService.get<any>("http://127.0.0.1:8000/user-all", httpOptions);
-  // }
-
 
 getUser (): Observable<any> {
-  const url = `${environment.apiUrl}/user-all`;
-  return this.httpClientService.get<any>(url, {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-  });
+  return this.httpClientService.get<any>(this.url);
 }
 
 private handleError<T> (operation = 'operation', result?: T) {
