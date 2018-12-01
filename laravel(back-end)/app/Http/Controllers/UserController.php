@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\Response;
-
+use Illuminate\Support\MessageBag;
+use App\User;
 
 class UserController extends Controller
 {
@@ -17,8 +18,19 @@ class UserController extends Controller
      */
     public function index()
     {
-      
+       $userList = array();
+       for ($i=1; $i < 21; $i++) { 
+        $userList[] = array(
+            'username' => 'User - '.$i,
+            'mobile' => rand(111111111, 999999999)
+        );            
     }
+    $finalResult = array(
+        'success' => true,
+        'items' => $userList
+    );
+    return $finalResult;
+}
 
     /**
      * Show the form for creating a new resource.
@@ -30,6 +42,29 @@ class UserController extends Controller
         //
     }
 
+/**
+     * Show the form for creating a new resource.
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+public function demoData(Request $request)
+{
+  $values =new User([
+      'name' => $request->get('name'),
+  ]);
+  if($values){
+      $finalResult = array(
+        'success' => true,
+        'value' => $values
+    );
+  }else{
+      $finalResult = array(
+        'error' => true
+    );
+  }
+  
+  return $finalResult;
+}
     /**
      * Store a newly created resource in storage.
      *

@@ -12,12 +12,17 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root',
 })
-export class UserService { 
+export class UserService {
   private url = environment.apiUrl + '/api/user-all';
+  private urldemo = environment.apiUrl + '/api/access-data';
   constructor(private httpClientService: HttpClient) { }
 
 getUser (): Observable<any> {
   return this.httpClientService.get<any>(this.url);
+}
+
+showData(data: any): Observable<any>{
+  return this.httpClientService.post<any>(this.urldemo,{name: data}, httpOptions);
 }
 
 private handleError<T> (operation = 'operation', result?: T) {

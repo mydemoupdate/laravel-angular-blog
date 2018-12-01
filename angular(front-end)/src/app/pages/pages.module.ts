@@ -6,14 +6,15 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { RouterModule } from '@angular/router';
 import { UserService } from '../service/user.service';
 import { HttpClientModule } from '@angular/common/http';
-
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
     PagesRoutingModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   declarations: [
       HomeComponent,
